@@ -16,14 +16,27 @@ class Movie
         $this->language = $language;
     }
 
-    public function getFullMovie()
+    public function getFullMovies()
     {
 
-        return $this->title
-            . " - " . $this->category
-            . " - " . $this->relDate
-            . " (" . $this->language . ")";
+        return "<h1> Title: " . $this->title . "</h1>"
+            . "<h2> Category: " . $this->category . "</h2>"
+            . "<h2> Release Date: " . $this->relDate . "</h2>"
+            . "<h3> Language: (" . $this->language . ") </h2>";
     }
 
+}
+
+$movies = [
+    new Movie("The Godfather", "crime", "24/03/1972", "English"),
+    new Movie("The Godfather Part II", "crime", "12/12/1974", "English")
+];
+
+foreach ($movies as $movie) {
+    echo "<div>";
+
+    echo $movie->getFullMovies();
+
+    echo "</div>";
 }
 ?>
